@@ -1,0 +1,42 @@
+* {
+    font-family: "Source Han Sans CN", "Fira Code";
+    font-size: 14px;
+}
+
+window {
+    border-radius: 4px;
+    border-width: 0px;
+    background-color: rgba(44, 62, 80, 0.75);
+    color: #ecf0f1;
+}
+
+#input {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-width: 0;
+    background-color: transparent;
+    color: #ecf0f1;
+    transition-property: all;
+    transition-duration: 0.15s;
+}
+
+#entry {
+    transition-property: all;
+    transition-duration: 0.15s;
+}
+
+#entry:selected {
+    background-color: rgba(0, 122, 255, 0.75);
+}
+
+#entry.activatable {
+    background-color: rgba(44, 62, 80, 0.75);
+    padding-left: 28px;
+    color: #ecf0f1;
+}
+
+#entry.activatable:selected {
+    background-color: rgba(0, 122, 255, 0.75);
+    padding-left: 28px;
+    color: #ecf0f1;
+}

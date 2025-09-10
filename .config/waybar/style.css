@@ -1,0 +1,331 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, "Source Han Sans CN", "Fira Code";
+    font-size: 14px;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: 0.25s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+.module {
+    border-radius: 4px;
+    transition-property: background-color;
+    transition-duration: 0.25s;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+    transition-property: all;
+    transition-duration: 0.25s;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ffffff;
+    color: #000000;
+}
+
+#workspaces {
+    background-color: transparent;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    border-radius: 4px;
+    background-color: rgba(45, 45, 45, 0.75);
+    color: #ffffff;
+}
+
+#workspaces button:hover {
+    background-color: rgba(0, 122, 255, 0.75);
+}
+
+#workspaces button.focused {
+    background-color: rgba(0, 122, 255, 0.75);
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode {
+    background-color: rgba(100, 114, 125, 0.75);
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    padding: 0 5px;
+    color: #ffffff;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right {
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#clock {
+    background-color: rgba(45, 45, 45, 0.75);
+}
+
+#battery {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#battery.charging, #battery.plugged {
+    color: rgb(38, 166, 91);
+}
+
+@keyframes blink {
+    to {
+        color: #000000;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    color: rgb(245, 60, 60);
+    animation-name: blink;
+    animation-duration: 0.25s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+    padding-top: 1px;
+    padding-right: 5px;
+}
+
+#power-profiles-daemon.performance {
+    color: rgb(245, 60, 60);
+}
+
+#power-profiles-daemon.balanced {
+    color: rgb(41, 128, 185);
+}
+
+#power-profiles-daemon.power-saver {
+    color: rgb(46, 204, 113);
+}
+
+/*
+label:focus {
+    background-color: #000000;
+}
+*/
+
+#cpu {
+    color: rgb(46, 204, 113);
+}
+
+#memory {
+    color: rgb(155, 89, 182);
+}
+
+#disk {
+    color: rgb(150, 75, 0);
+}
+
+#backlight {
+    color: rgb(144, 177, 177);
+}
+
+#network {
+    color: rgb(41, 128, 185);
+}
+
+#network.disconnected {
+    color: rgb(245, 60, 60);
+}
+
+#pulseaudio {
+    color: rgb(241, 196, 15);
+}
+
+#pulseaudio.muted {
+    color: rgb(144, 177, 177);
+}
+
+#wireplumber {
+    color: rgb(255, 240, 245);
+}
+
+#wireplumber.muted {
+    color: rgb(245, 60, 60);
+}
+
+#custom-media {
+    color: rgb(102, 204, 153);
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    color: rgb(102, 204, 153);
+}
+
+#custom-media.custom-vlc {
+    color: rgb(255, 160, 0);
+}
+
+#temperature {
+    color: rgb(240, 147, 43);
+}
+
+#temperature.critical {
+    color: rgb(235, 77, 75);
+}
+
+#tray {
+    color: rgb(41, 128, 185);
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    color: rgb(235, 77, 75);
+}
+
+#idle_inhibitor {
+    color: rgb(215, 215, 215);
+}
+
+#idle_inhibitor.activated {
+    color: rgb(0, 120, 255);
+}
+
+#mpd {
+    color: rgb(102, 204, 153);
+    color: #2a5c45;
+}
+
+#mpd.disconnected {
+    color: rgb(245, 60, 60);
+}
+
+#mpd.stopped {
+    color: rgb(144, 177, 177);
+}
+
+#mpd.paused {
+    color: rgb(81, 163, 122);
+}
+
+#language {
+    color: rgb(0, 176, 147);
+    color: #740864;
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state {
+    color: rgb(151, 225, 173);
+    color: #000000;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+    color: rgb(0, 0, 0);
+}
+
+#scratchpad {
+    color: rgb(0, 0, 0);
+}
+
+#scratchpad.empty {
+	background-color: transparent;
+}
+
+#privacy {
+    padding: 0;
+}
+
+#privacy-item {
+    padding: 0 5px;
+    color: white;
+}
+
+#privacy-item.screenshare {
+    color: rgb(207, 87, 0);
+}
+
+#privacy-item.audio-in {
+    color: rgb(28, 160, 0);
+}
+
+#privacy-item.audio-out {
+    color: rgb(0, 105, 212);
+}

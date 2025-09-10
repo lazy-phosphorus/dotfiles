@@ -1,0 +1,75 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+    // "proxy": "http://127.0.0.1:10808",
+
+    // apparence
+    "theme": {
+        "mode": "system",
+        "light": "One Light",
+        "dark": "One Dark"
+    },
+    "experimental.theme_overrides": {
+        "syntax": {
+            "comment": {
+                "color": "#239b56",
+                "font_style": "italic"
+            },
+            "comment.doc": {
+                "color": "#2ecc71",
+                "font_style": "italic"
+            },
+            "symbol": {
+                "color": "#ffffff"
+            }
+        },
+        "editor.active_line.background": "#cacfd208"
+    },
+    "features": {
+        "edit_prediction_provider": "none"
+    },
+    "collaboration_panel": { "button": false, "dock": "right" },
+    "edit_predictions": null,
+    "agent": { "enabled": false },
+    "project_panel": { "default_width": 300 },
+    "git_panel": { "default_width": 300 },
+    "outline_panel": { "default_width": 300 },
+
+    // editor
+    "vim_mode": true,
+    "ui_font_size": 16,
+    "ui_font_family": "Fira Code",
+    "buffer_font_size": 16,
+    "buffer_font_family": "Fira Code",
+    "autosave": "on_window_change",
+    "show_whitespaces": "all",
+    "restore_on_startup": "none",
+    "diagnostics": {
+        "include_warnings": true,
+        "inline": {
+            "enabled": true
+        }
+    },
+    "inlay_hints": {
+        "enabled": false
+    },
+
+    // format
+    "format_on_save": "on",
+    "tab_size": 4,
+    "remove_trailing_whitespace_on_save": true,
+
+    // terminal
+    "terminal": {
+        "font_size": 14,
+        "font_family": "FiraCode Nerd Font Mono",
+        "cursor_shape": "bar",
+        "default_height": 250
+    }
+}

@@ -61,13 +61,18 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 5px;
-    border-radius: 4px;
+    margin: 0.5px;
+    padding: 0 6px;
+    border-radius: 2px;
     background-color: rgba(45, 45, 45, 0.75);
     color: #ffffff;
 }
 
 #workspaces button:hover {
+    background-color: rgba(0, 122, 255, 0.75);
+}
+
+#workspaces button.active {
     background-color: rgba(0, 122, 255, 0.75);
 }
 
@@ -92,7 +97,6 @@ button:hover {
 #disk,
 #temperature,
 #backlight,
-#network,
 #pulseaudio,
 #wireplumber,
 #custom-media,

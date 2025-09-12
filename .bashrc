@@ -11,7 +11,7 @@ PS1='[\u@\h \W]\$ '
 
 export GTK_IM_MODULE='fcitx5'
 export SDL_IM_MODULE='fcitx5'
-export XMODIFIERS='@im=fcitx'
+export XMODIFIERS='@im=fcitx5'
 export QT_IM_MODULE='fcitx5'
 export XDG_CONFIG_HOME=$HOME/.config
 export GTK_USE_PORTAL=1
